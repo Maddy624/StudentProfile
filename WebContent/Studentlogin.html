@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Student Login</title>
+        <link rel="stylesheet" href="style1.css">
+        <script >
+            function validate()
+{ 
+    var letters = /^[A-Za-z]+[0-9]/;
+   if( document.StudentLogin.suname.value == "" )
+   {
+     alert( "Please provide your username!" );
+    
+     return false;
+   }
+   if( document.StudentLogin.spwd.value == "" )
+   {
+     alert( "Please provide your password!" );
+    
+     return false;
+   }
+   if( !document.StudentLogin.suname.value.match(letters) )
+   {
+     alert( "Username should be alphanumeric only Wrong username" );
+     return false;
+   }
+   if( document.StudentLogin.spwd.value.length<8 )
+   {
+     alert( "Password should be minimum of minimumlength 8" );
+     return false;
+   }
+   return true;
+}
+            
+            function printalert(){
+            	
+            	var al = '<%= session.getAttribute("user")%>';
+            	if(al != "null"){
+            		if(al === "no"){
+            			alert("Login not sccessful");
+            			<%session.removeAttribute("user");%>
+            		}
+            		
+            	}
+            			
+            		
+            	}
+            }
+        </script>
+    </head>
+    <body onload="printalert()">
+        <img class="wave" src="wave.png">
+        <div class="img">
+			<img src="bg.svg">
+		</div>
+        <form class="box" action="checkStudentLogin.jsp" name="StudentLogin" onsubmit="return(validate());">
+            <h1>Student Login</h1>
+            <input type="text" name="suname" value="" placeholder="Username">
+            <input type="password" name="spwd" value="" placeholder="Password">
+            <input type="submit" name="login-btn"  value="Login">
+        </form>
+    </body>
+</html>

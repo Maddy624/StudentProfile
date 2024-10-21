@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  *{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body{
+  font-family: sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+nav .logo{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 50px;
+  padding-left:20px;
+
+
+}
+nav{
+  height: 50px;
+  background: #063247;
+  box-shadow: 0 3px 15px rgba(0,0,0,.4);
+}
+nav ul{
+  float: right;
+  margin-right: 30px;
+}
+nav ul li{
+  display: inline-block;
+}
+nav ul li a{
+  color: white;
+  display: block;
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 20px;
+  background: #063247;
+  transition: .5s;
+}
+nav ul li a:hover,
+nav ul li a .active{
+  color: #23dbdb;
+}
+nav ul ul{
+  position: absolute;
+  top: 85px;
+  border-top: 3px solid #23dbdb;
+  opacity: 0;
+  visibility: hidden;
+}
+nav ul li:hover > ul{
+  top: 50px;
+  opacity: 1;
+  visibility: visible;
+  transition: .5s ;
+}
+nav ul ul li{
+  width: 150px;
+  display: list-item;
+  position: relative;
+  border: 1px solid #042331;
+  border-top: none;
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+
+
+
+</style>
+</head>
+<body>
+  <nav>
+    <label class="logo">Student Profile</label>
+  <ul>
+<li><a class="active" href="#">Home</a></li>
+<li><a href="contact.html"target="_blank"> Contact</a></li>
+<li><a href="adminlogin.jsp" target="_blank">Admin</a></li>
+<li><a href="Studentlogin.jsp" target="_blank">Student</a></li>
+<li><a href="formpage.html"target ="_blank">Feedback</a></li>
+</ul>
+</nav>
+
+</body>
+</html>
